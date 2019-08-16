@@ -12,7 +12,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-require('./routes/userRoutes')(app);
+// Rutas
+require('./routes/index')(app);
+// require('./routes/userRoutes')(app);
+// require('./routes/login')(app);
 
 mongoose.connect(keys.mongoURI, {
     useNewUrlParser: true,
