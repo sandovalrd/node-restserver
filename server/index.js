@@ -1,7 +1,8 @@
 const express = require('express'); // npm install express --save
 const mongoose = require("mongoose"); // npm install mongoose --save
 const bodyParser = require('body-parser'); // npm install body-parser --save
-const keys = require("./config/keys");
+const keys = require('./config/keys');
+const path = require('path');
 require('./models/User');
 const app = express();
 const port = process.env.PORT || 8080;
@@ -11,6 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
+
+app.use(express.static(path.resolve(__dirname, '../public')));
 
 // Rutas
 require('./routes/index')(app);

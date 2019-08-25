@@ -6,7 +6,7 @@ const adminRole = require('../middleware/adminRole');
 
 module.exports = app => {
 
-    app.get('/usuario', authorization, (req, res) => {
+    app.get('/usuarios', authorization, (req, res) => {
         const desde = Number(req.query.desde) || 0;
         const limite = Number(req.query.limite) || 5;
 
