@@ -8,7 +8,8 @@ const productSchema = new Schema({
     descripcion: { type: String, required: false },
     disponible: { type: Boolean, required: true, default: true },
     categoria: { type: Schema.Types.ObjectId, ref: 'category', required: true },
-    usuario: { type: Schema.Types.ObjectId, ref: 'users' }
+    usuario: { type: Schema.Types.ObjectId, ref: 'users' },
+    img: { type: String },
 });
 
 
